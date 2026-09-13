@@ -95,6 +95,10 @@ The app needs **Accessibility permission** to switch apps and trigger shortcuts:
 
 Once running, Touch Bar Companion appears in your menu bar:
 
+![Menu Bar Screenshot](screenshots/menubar-screenshot.html)
+
+*Touch Bar Companion lives in your menu bar — click the TBN icon for quick access*
+
 - **Click the icon** to open settings
 - **Access quick actions** from the dropdown menu
 - **See active shortcuts** and status
@@ -113,6 +117,10 @@ Default shortcuts (customizable in settings):
 ### Settings Panel
 
 Customize your experience:
+
+![Settings Panel](screenshots/settings-panel-screenshot.html)
+
+*Settings panel with TBN dark theme (#1a1210 bg, #EA6113 accent)*
 
 - **Icon size:** 20px - 44px
 - **Touch Bar position:** Left, Center, Right (for future Touch Bar support)

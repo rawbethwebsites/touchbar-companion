@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Touch Bar Companion — Settings Panel</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a1210 0%, #2a1f1c 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .settings-panel {
+      width: 420px;
+      background: rgba(40, 32, 28, 0.95);
+      backdrop-filter: blur(30px);
+      border-radius: 12px;
+      border: 1px solid rgba(234, 97, 19, 0.2);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+    .panel-header {
+      background: linear-gradient(135deg, #EA6113 0%, #F88F22 100%);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .panel-icon {
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #EA6113;
+      font-size: 16px;
+    }
+    .panel-title {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .panel-subtitle {
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+    .panel-content {
+      padding: 24px;
+    }
+    .setting-group {
+      margin-bottom: 24px;
+    }
+    .setting-label {
+      color: #FBB931;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .setting-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .setting-row:last-child { border-bottom: none; }
+    .setting-name {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .setting-desc {
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .toggle {
+      width: 50px;
+      height: 28px;
+      background: #EA6113;
+      border-radius: 14px;
+      position: relative;
+      cursor: pointer;
+    }
+    .toggle::after {
+      content: '';
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 24px;
+      height: 24px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .slider {
+      width: 120px;
+      height: 4px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 2px;
+      position: relative;
+    }
+    .slider::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -6px;
+      width: 16px;
+      height: 16px;
+      background: #EA6113;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(234, 97, 19, 0.4);
+    }
+    .value-display {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-family: 'SF Mono', monospace;
+      width: 40px;
+      text-align: right;
+    }
+    .logo-preview {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #EA6113, #F88F22);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .btn {
+      background: linear-gradient(135deg, #EA6113 0%, #F88F22 100%);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .caption {
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="settings-panel">
+      <div class="panel-header">
+        <div class="panel-icon">TBN</div>
+        <div>
+          <div class="panel-title">Touch Bar Companion</div>
+          <div class="panel-subtitle">Settings</div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="setting-group">
+          <div class="setting-label">Appearance</div>
+          <div class="setting-row">
+            <div>
+              <div class="setting-name">Icon Size</div>
+              <div class="setting-desc">Adjust menu bar icon size</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div class="slider"></div>
+              <div class="value-display">30px</div>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <div class="setting-name">Hover Brighten</div>
+              <div class="setting-desc">Brighten icons on hover</div>
+            </div>
+            <div class="toggle"></div>
+          </div>
+        </div>
+        
+        <div class="setting-group">
+          <div class="setting-label">Branding</div>
+          <div class="setting-row">
+            <div>
+              <div class="setting-name">Logo</div>
+              <div class="setting-desc">Custom logo for menu bar</div>
+            </div>
+            <div class="logo-preview">TBN</div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <div class="setting-name">Logo Link</div>
+              <div class="setting-desc">URL when logo is clicked</div>
+            </div>
+            <button class="btn">Change</button>
+          </div>
+        </div>
+        
+        <div class="setting-group">
+          <div class="setting-label">Shortcuts</div>
+          <div class="setting-row">
+            <div>
+              <div class="setting-name">Enable Hotkeys</div>
+              <div class="setting-desc">Global keyboard shortcuts</div>
+            </div>
+            <div class="toggle"></div>
+          </div>
+          <div class="setting-row">
+            <div>
+              <div class="setting-name">Fade Delay</div>
+              <div class="setting-desc">Seconds before dimming</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div class="slider"></div>
+              <div class="value-display">3.0s</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="caption">
+          Touch Bar Companion v0.1.0 • Built by TBN
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 20px;">
+      Settings panel with TBN dark theme (#1a1210 bg, #EA6113 accent)
+    </div>
+  </div>
+</body>
+</html>

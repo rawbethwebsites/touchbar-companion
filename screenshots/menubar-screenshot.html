@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Touch Bar Companion — Menu Bar Screenshot</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #1e1e1e 0%, #2d2d2d 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .macos-menubar {
+      width: 100%;
+      max-width: 1200px;
+      height: 32px;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(20px);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .menubar-left, .menubar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .apple-logo {
+      color: #fff;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    .app-name {
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .menu-item {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .menu-item:hover { color: #fff; }
+    .tbn-icon {
+      width: 20px;
+      height: 20px;
+      background: #EA6113;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: 12px;
+    }
+    .status-icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.7;
+      filter: invert(1);
+    }
+    .caption {
+      position: absolute;
+      bottom: -40px;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: relative;">
+    <div class="macos-menubar">
+      <div class="menubar-left">
+        <span class="apple-logo"></span>
+        <span class="app-name">Touch Bar Companion</span>
+        <span class="menu-item">File</span>
+        <span class="menu-item">Edit</span>
+        <span class="menu-item">View</span>
+        <span class="menu-item">Help</span>
+      </div>
+      <div class="menubar-right">
+        <div class="tbn-icon">TBN</div>
+        <span class="menu-item">☀️</span>
+        <span class="menu-item">🔋</span>
+        <span class="menu-item">📶</span>
+        <span class="menu-item">🔍</span>
+        <span class="menu-item">⚙️</span>
+      </div>
+    </div>
+    <div class="caption">
+      Touch Bar Companion lives in your menu bar — click the TBN icon for quick access
+    </div>
+  </div>
+</body>
+</html>

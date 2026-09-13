@@ -1,250 +1,112 @@
-# Touch Bar Companion 💻
+# Touch Bar Companion
 
-> **Add Touch Bar functionality to any Mac** — Menu bar app with customizable shortcuts, app switching, and workflow automation.
+**Built by The Boost Nation**
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
-![Platform](https://img.shields.io/badge/platform-macOS%2014.0+-lightgrey)
-![License](https://img.shields.io/badge/license-MIT-green)
+A familiar strip of controls, right on your screen.
 
----
+Touch Bar Companion brings an on-screen, Touch Bar-style companion to Macs without a built-in Touch Bar. Keep typing suggestions, app shortcuts, volume controls, and editing actions together in a floating bar.
 
-## What It Does
-
-Touch Bar Companion brings **Touch Bar-style controls to any Mac** — even models without a physical Touch Bar (2016-2023 MacBook Pros).
-
-Instead of hardware-dependent Touch Bar items, this app lives in your **menu bar** and provides:
-
-- **Quick app switching** with custom hotkeys
-- **Workflow shortcuts** for frequently-used actions
-- **Customizable icons** and branding
-- **Settings panel** for personalization
-
-**Perfect for:** Developers, power users, and anyone who wants keyboard-first workflow control without Touch Bar hardware.
+**A physical Touch Bar is not required. Hermes is one optional app shortcut; it is not required to use the companion.**
 
 ---
 
-## Download
+## ⚠️ Critical Requirements
 
-**Latest Release:** [v0.1.0](https://github.com/rawbethwebsites/touchbar-companion/releases/tag/v0.1.0)
+**This build ONLY works on:**
+- ✅ Apple Silicon Macs (M1, M2, M3 chips)
+- ✅ macOS 26.0 or later
 
-- **File size:** 667 KB
-- **Format:** `.app` (zipped)
-- **Code signing:** Ad-hoc (development)
+**Does NOT work on:**
+- ❌ Intel Macs
+- ❌ macOS 14, 15, or 25
 
----
-
-## Requirements
-
-| Requirement | Details |
-|-------------|---------|
-| **OS** | macOS 14.0 (Sonoma) or later |
-| **Hardware** | Any Intel or Apple Silicon Mac |
-| **Permissions** | Accessibility (for app switching) |
-
-**Note:** Despite the name, this app does **not** require a physical Touch Bar. It works on **any Mac** with macOS 14.0+.
+This is a test build compiled for Apple Silicon only. Intel compatibility will be addressed in a future release.
 
 ---
 
-## Installation
+## Download the test build
 
-### 1. Download
+[**Download Touch Bar Companion v0.2.0**](https://github.com/rawbethwebsites/touchbar-companion/releases/download/v0.2.0/TouchBarCompanion-v0.2.0-no-xcode.zip) · 659 KB
 
-```bash
-# Direct download from GitHub Releases
-curl -LO https://github.com/rawbethwebsites/touchbar-companion/releases/download/v0.1.0/TouchBarCompanion-v0.1.0.zip
-```
+**You do not need Xcode to run it.**
 
-### 2. Install
-
-```bash
-# Unzip
-unzip TouchBarCompanion-v0.1.0.zip
-
-# Move to Applications
-mv "Touch Bar Companion.app" /Applications/
-```
-
-### 3. First Launch
-
-macOS will block unsigned apps by default. Bypass this:
-
-```bash
-# Option A: Right-click method
-# 1. Right-click (or Control-click) on the app
-# 2. Select "Open" from the context menu
-# 3. Click "Open" in the warning dialog
-
-# Option B: Terminal method (advanced)
-xattr -cr /Applications/Touch\ Bar\ Companion.app
-```
-
-### 4. Grant Permissions
-
-The app needs **Accessibility permission** to switch apps and trigger shortcuts:
-
-1. Open **System Settings** → **Privacy & Security** → **Accessibility**
-2. Click the **+** button
-3. Navigate to `/Applications/Touch Bar Companion.app`
-4. Toggle it **ON**
+This repository distributes the compiled app, documentation, and images. App source code is not included.
 
 ---
 
-## Usage
+## Install
 
-### Menu Bar
+1. **Download** and unzip the app
+2. **Move** "Touch Bar Companion.app" into **Applications**
+3. **Right-click → Open** (first time only — this is a development test build, so macOS may require approval in **System Settings → Privacy & Security → Open Anyway**)
+4. **Enable Accessibility permission** for Touch Bar Companion in **System Settings → Privacy & Security → Accessibility** (required for suggestions and editing actions in other apps)
+5. **Open the companion control panel** from the menu bar and use **Show / Hide Suggestions** to toggle the floating bar
 
-Once running, Touch Bar Companion appears in your menu bar:
-
-![Menu Bar Screenshot](screenshots/menubar-screenshot.html)
-
-*Touch Bar Companion lives in your menu bar — click the TBN icon for quick access*
-
-- **Click the icon** to open settings
-- **Access quick actions** from the dropdown menu
-- **See active shortcuts** and status
-
-### Keyboard Shortcuts
-
-Default shortcuts (customizable in settings):
-
-| Action | Shortcut |
-|--------|----------|
-| Toggle App | `Cmd + Option + T` |
-| Quick Switch 1 | `Cmd + Option + 1` |
-| Quick Switch 2 | `Cmd + Option + 2` |
-| Open Settings | `Cmd + Option + ,` |
-
-### Settings Panel
-
-Customize your experience:
-
-![Settings Panel](screenshots/settings-panel-screenshot.html)
-
-*Settings panel with TBN dark theme (#1a1210 bg, #EA6113 accent)*
-
-- **Icon size:** 20px - 44px
-- **Touch Bar position:** Left, Center, Right (for future Touch Bar support)
-- **Logo link:** Custom URL for branding
-- **Hotkeys:** Enable/disable and remap shortcuts
-- **Theme:** Light/Dark mode
+**Keyboard shortcut:** `Control + Option + Command + T`
 
 ---
 
-## Building from Source
+## Control Panel
 
-For developers who want to modify or rebuild:
+Actual screenshot of the running app matching the v0.2.0 package:
 
-### Prerequisites
+![Touch Bar Companion control panel showing appearance, fading, position, and icon-size settings](https://raw.githubusercontent.com/rawbethwebsites/touchbar-companion/main/screenshots/control-panel.png)
 
-- macOS 14.0+
-- Xcode Command Line Tools (`xcode-select --install`)
-- Swift 5.9+
+The panel includes:
+- Appearance controls (light/dark mode)
+- Idle fading behavior
+- Bar position (top/bottom of screen)
+- Icon size adjustment
+- App-shortcut selection
 
-### Build
-
-```bash
-git clone https://github.com/rawbethwebsites/touchbar-companion.git
-cd touchbar-companion
-
-# Run the build script
-./build.sh
-```
-
-Output: `Touch Bar Companion.app` in the current directory.
-
-### Project Structure
-
-```
-TouchBarCompanion/
-├── main.swift              # Main app logic + SwiftUI settings
-├── Predictions.swift       # Hotkey + app prediction logic
-├── TextCompatibility.swift # Text rendering utilities
-├── Assets/                 # Icons and images
-├── build.sh                # Build script (no Xcode project needed)
-└── README.md               # This file
-```
+A verified image of the floating bar is still pending. Earlier HTML mockups are not screenshots of the app and are not presented as product images here.
 
 ---
 
-## Troubleshooting
+## What to test
 
-### App Won't Open
+- Show and hide the floating bar
+- Type in a compatible text field and check whether suggestions appear
+- Try inserting a suggestion and using copy, paste, undo, and volume controls
+- Open your selected apps from the bar
+- Change appearance or position in the control panel and check the result
 
-**Problem:** macOS says "App can't be opened because it's from an unidentified developer."
-
-**Solution:**
-```bash
-xattr -cr /Applications/Touch\ Bar\ Companion.app
-```
-
-Or use the right-click → Open method described above.
-
-### Touch Bar Items Don't Appear
-
-**Problem:** No Touch Bar items show when app is running.
-
-**Cause:** This app is designed for **menu bar use** on Macs **without** Touch Bar hardware. Touch Bar item support is planned for future versions.
-
-**Workaround:** Use the menu bar icon and keyboard shortcuts instead.
-
-### Shortcuts Don't Work
-
-**Problem:** Keyboard shortcuts don't trigger actions.
-
-**Solution:**
-1. Check **System Settings** → **Keyboard** → **Keyboard Shortcuts** for conflicts
-2. Ensure **Accessibility permission** is granted (see Installation step 4)
-3. Restart the app after granting permissions
-
-### App Crashes on Launch
-
-**Solution:**
-1. Check **Console.app** for crash logs (filter by `TouchBarCompanion`)
-2. Ensure macOS 14.0+ is installed (`sw_vers`)
-3. Try rebuilding from source if you've modified the code
+[**Report a problem**](https://github.com/rawbethwebsites/touchbar-companion/issues) with your Mac model, macOS version, the app you were typing in, and the steps that caused it. Avoid including private text in screenshots.
 
 ---
 
-## Roadmap
+## Test-build limitations
 
-### v0.2.0 (Planned)
-- [ ] TBN branding integration (logo, colors)
-- [ ] Custom app shortcut presets (Hermes, Xcode, VS Code)
-- [ ] Workflow builder (chain multiple actions)
-
-### v1.0.0 (Future)
-- [ ] Actual Touch Bar support for equipped Macs
-- [ ] iCloud sync for settings across devices
-- [ ] Plugin system for third-party extensions
-- [ ] Code signing + notarization for seamless installs
+- **Text suggestions and insertion** depend on the application and focused text field. Compatibility across apps is not fully verified
+- This is a **custom on-screen companion** using Apple text services; it does not reproduce Apple's hardware Touch Bar interface exactly
+- The package passes a **local code-signature verification**. Notarization and installation on a separate Mac have not been verified
+- The release is labelled **v0.2.0**, but its internal app version is still **0.1.0**
+- **macOS 26.0+ and arm64 requirements** were checked directly from the published executable on 2026-09-13
 
 ---
 
-## Credits
+## Changelog
 
-- **Inspired by:** [loretoparisi/touchbar-https](https://github.com/loretoparisi/touchbar-https)
-- **Built with:** Swift, SwiftUI, AppKit
-- **Brand:** The Boost Nation (TBN)
+### v0.2.0 (2026-09-13)
+
+**Removed:**
+- Xcode dependency — no more installation warnings
+- Touch Bar simulator toggle (developer-only feature)
+- "Show / Hide Touch Bar" menu item
+
+**Simplified:**
+- Status bar now shows only Accessibility permission status
+- Cleaner experience for non-developer users
+
+### v0.1.0 (Initial test build)
+
+- Initial release with TBN branding
+- Menu bar app with floating suggestion bar
+- Control panel for customization
+- Keyboard shortcut support
 
 ---
 
-## License
+Built by **The Boost Nation** — 2026
 
-MIT License — see [LICENSE](LICENSE) for details.
-
-**Built by TBN — 2026**
-
----
-
-## Support
-
-- **Issues:** [GitHub Issues](https://github.com/rawbethwebsites/touchbar-companion/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/rawbethwebsites/touchbar-companion/discussions)
-- **Email:** rob@theboostnation.com
-
-**Found a bug?** Open an issue with:
-- macOS version
-- Steps to reproduce
-- Console.app crash log (if applicable)
-
-**Feature request?** Start a discussion with your use case.
+**TBN Brand Colors:** `#1a1210` (background), `#EA6113` (accent)

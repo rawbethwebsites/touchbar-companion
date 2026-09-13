@@ -1,95 +1,80 @@
-# Touch Bar Companion — Release Notes
+# Touch Bar Companion v0.2.0 — Test Build
 
-**Version:** 0.1.0  
-**Release Date:** 2026-09-13  
-**Build:** Initial public test release
+**An on-screen Touch Bar-style companion for Macs without built-in Touch Bar hardware.**
 
----
-
-## What's New
-
-First public release of Touch Bar Companion — a menu bar app that brings Touch Bar-style workflow control to **any Mac**, regardless of Touch Bar hardware.
-
-### Core Features
-
-✅ **Menu Bar Integration**
-- Lives in your menu bar for instant access
-- Dropdown menu with quick actions
-- Status indicators for active shortcuts
-
-✅ **Keyboard Shortcuts**
-- Customizable hotkeys for app switching
-- Global shortcuts work from any app
-- Conflict detection and remapping
-
-✅ **Settings Panel**
-- Icon size customization (20-44px)
-- Touch Bar position settings (future-proof)
-- Logo link configuration
-- Hotkey enable/disable toggles
-- Dark/Light theme support
-
-✅ **TBN Branding**
-- Custom TBN logo in app icon
-- TBN color scheme in settings panel
-- Branded download page
+**Built by The Boost Nation**
 
 ---
 
-## What It's NOT
+## Download
 
-❌ **Not Touch Bar hardware dependent** — Works on any Mac with macOS 14.0+  
-❌ **Not Hermes-specific** — General-purpose workflow tool (Hermes integration planned for v0.2.0)  
-❌ **Not App Store ready** — Ad-hoc signed for testing only
+[**Download the app**](https://github.com/rawbethwebsites/touchbar-companion/releases/download/v0.2.0/TouchBarCompanion-v0.2.0-no-xcode.zip) (659 KB)
 
 ---
 
-## Known Issues
+## ⚠️ Requirements
 
-| Issue | Impact | Workaround | Planned Fix |
-|-------|--------|------------|-------------|
-| Ad-hoc code signing | Users must right-click → Open on first launch | Documented in README | v0.2.0: Notarization |
-| No actual Touch Bar support | Touch Bar items don't appear on equipped Macs | Use menu bar + shortcuts | v1.0.0: Full Touch Bar API |
-| Deprecation warnings (macOS 14 `onChange`) | Build warnings only, no runtime impact | None needed | v0.2.0: Code cleanup |
+- **Apple Silicon Mac (arm64)** — M1, M2, or M3 chip required
+- **macOS 26.0 or later** — Intel Macs and macOS 14/15/25 NOT supported
+- **Accessibility permission** — Required for cross-app typing and editing features
+- **No Xcode installation required** — Runs without developer tools
 
----
+**Install:** Unzip, move the app to Applications, then open it. If macOS blocks the development build, review its approval option in **System Settings → Privacy & Security**. Enable the app under **Accessibility**.
 
-## Feedback Needed
-
-Testing this release? Please report:
-
-1. **Installation:** Did the app install and launch without issues?
-2. **Shortcuts:** Do keyboard shortcuts work after granting Accessibility permission?
-3. **UI:** Does the settings panel render correctly on your display resolution?
-4. **Performance:** Any lag, crashes, or high CPU usage?
-5. **Use Cases:** What workflows would you use this for?
-
-**Submit feedback:**
-- [GitHub Issues](https://github.com/rawbethwebsites/touchbar-companion/issues)
-- Email: rob@theboostnation.com
+Use **Show / Hide Suggestions** in the control panel or **Control + Option + Command + T** to toggle the floating bar.
 
 ---
 
-## Next Release (v0.2.0)
+## Control Panel
 
-Planned improvements:
+![Touch Bar Companion control panel](https://raw.githubusercontent.com/rawbethwebsites/touchbar-companion/main/screenshots/control-panel.png)
 
-- [ ] Code signing + notarization (no more right-click to open)
-- [ ] TBN branding customization in settings UI
-- [ ] Preset shortcut packs (Developer, Designer, Writer workflows)
-- [ ] Workflow builder (chain multiple actions)
-- [ ] Fix macOS 14 deprecation warnings
+*Actual screenshot from v0.2.0 running on macOS 26.0+*
 
-**Target date:** TBD based on v0.1.0 feedback
+A verified floating-bar screenshot is still pending; HTML mockups are not actual app screenshots.
 
 ---
 
-## Downloads
+## What's New in v0.2.0
 
-- **GitHub Release:** https://github.com/rawbethwebsites/touchbar-companion/releases/tag/v0.1.0
-- **Vercel Demo Page:** https://vercel-deploy-sandy-gamma.vercel.app
-- **Repository:** https://github.com/rawbethwebsites/touchbar-companion
+### Removed
+- ❌ Xcode dependency — no more "Install Xcode" warnings
+- ❌ Touch Bar simulator toggle (developer-only feature)
+- ❌ "Show / Hide Touch Bar" menu item
+
+### Simplified
+- ✅ Status bar shows only Accessibility permission status
+- ✅ Cleaner experience for non-developer users
+- ✅ No confusing messages for non-developer users
 
 ---
 
-**Built by TBN — 2026**
+## Verification and Limits — 2026-09-13
+
+- ✅ The packaged executable matches the locally running app
+- ✅ Local strict code-signature verification passed
+- ✅ Control panel visually inspected
+- ⚠️ Full cross-app interaction not verified
+- ⚠️ Notarization not completed (Gatekeeper warning expected)
+- ⚠️ Installation on another Mac not verified
+- ⚠️ Internal app version remains 0.1.0 despite v0.2.0 release label
+
+**Earlier claims of Intel and macOS 14 support were incorrect for this package.** This build is Apple Silicon only, macOS 26.0+.
+
+---
+
+## Archive Verification
+
+**SHA-256:** `98e40582aa0a6f5b465cde0d3ef5026132b79a66f4d0af0f5cf05b9898ab51d5`
+
+---
+
+## Report Issues
+
+Please report your **Mac model**, **macOS version**, **affected app**, and **reproduction steps** through [GitHub Issues](https://github.com/rawbethwebsites/touchbar-companion/issues).
+
+---
+
+**Built by The Boost Nation — 2026**
+
+TBN Brand: `#1a1210` (background), `#EA6113` (accent)

@@ -1,23 +1,17 @@
-# Touch Bar Companion — Screenshots
+# Product Images
 
-This folder contains visual previews of the Touch Bar Companion app UI.
+## TBN Logo
+`tbn-logo.png` — Official The Boost Nation logo (141 KB)
 
-## Files
+## Control Panel
+`control-panel.png` — Actual screenshot captured on 2026-09-13 from the running app whose executable matches the v0.2.0 archive.
 
-### `menubar-screenshot.html`
-Renders the macOS menu bar with Touch Bar Companion icon. Shows how the app appears when running.
-
-**Open in browser:** Double-click the HTML file
-
-### `settings-panel-screenshot.html`
-Renders the settings panel with TBN dark theme (#1a1210 background, #EA6113 accent). Shows customization options for icon size, branding, and shortcuts.
-
-**Open in browser:** Double-click the HTML file
-
-## Note
-
-These are CSS/HTML mockups that accurately represent the app's design. For live screenshots of the actual app running on your Mac, use `Cmd + Shift + 4` or the Screenshot app.
+## Historical Mockups
+The two HTML files (`menubar-screenshot.html`, `settings-panel-screenshot.html`) are historical design mockups, **not screenshots**. They are not embedded as product images. A verified floating-bar screenshot is pending.
 
 ---
 
-**TBN — 2026**
+**Usage:**
+- Use `tbn-logo.png` for branding on Vercel landing page and GitHub README
+- Use `control-panel.png` as the primary product screenshot
+- Do not use HTML mockups as product images
